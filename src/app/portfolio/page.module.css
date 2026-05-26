@@ -1,3 +1,5 @@
+/* 2026-05-22 신규 생성: 포트폴리오 페이지 스타일 */
+
 .page {
   display: flex;
   flex: 1;
@@ -50,56 +52,70 @@
   color: #64748b;
 }
 
-/* ===== 공통 섹션 헤더 ===== */
-.sectionHeader {
-  text-align: center;
+/* ===== 필터 섹션 ===== */
+.filterSection {
+  padding: 40px 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 80px;
+  z-index: 10;
+}
+
+.filterTabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
   max-width: 800px;
-  margin: 0 auto 40px;
+  margin: 0 auto;
 }
 
-.sectionEyebrow {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #F57C00;
-  margin-bottom: 12px;
-}
-
-.sectionHeader h2 {
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  color: #0f172a;
-  margin-bottom: 16px;
-}
-
-.sectionLead {
-  font-size: 17px;
-  line-height: 1.75;
+.filterTab {
+  padding: 12px 24px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
   color: #64748b;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* ===== 핵심 사업 섹션 ===== */
-.coreSection {
-  padding: 80px 24px;
+.filterTab:hover {
+  border-color: #F57C00;
+  color: #F57C00;
+}
+
+.filterTabActive {
+  background: linear-gradient(135deg, #F57C00 0%, #FF5722 100%);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.filterTabActive:hover {
+  color: #ffffff;
+}
+
+/* ===== 프로젝트 섹션 ===== */
+.projectsSection {
+  padding: 60px 24px 100px;
   background: #f8fafc;
 }
 
-.coreGrid {
+.projectsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.coreCard {
+.projectCard {
   display: flex;
   flex-direction: column;
-  padding: 32px;
+  padding: 28px;
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 20px;
@@ -109,123 +125,78 @@
   animation-delay: var(--delay, 0s);
 }
 
-.coreCard:hover {
+.projectCard:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
   border-color: var(--accent-color, #c97707);
 }
 
-.coreCardHeader {
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 16px;
 }
 
-.coreBadge {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--accent-color, #F57C00) 12%, transparent);
-  font-size: 12px;
+.projectYear {
+  font-size: 28px;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--accent-color, #F57C00);
 }
 
-.coreTitle {
-  font-size: 22px;
+.projectClient {
+  padding: 4px 12px;
+  background: #f1f5f9;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.projectTitle {
+  font-size: 18px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.4;
   color: #0f172a;
   margin-bottom: 12px;
 }
 
-.coreSummary {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #64748b;
-  margin-bottom: 20px;
-}
-
-.coreList {
-  display: grid;
-  gap: 10px;
-  padding-left: 20px;
-  margin: 0;
-  list-style: disc;
-}
-
-.coreList li {
+.projectDesc {
   font-size: 14px;
   line-height: 1.7;
-  color: #475569;
+  color: #64748b;
+  margin-bottom: 16px;
+  flex: 1;
 }
 
-.coreList li::marker {
-  color: var(--accent-color, #F57C00);
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
 }
 
-/* ===== 카탈로그 섹션 (사업분야 / 보유제품) ===== */
-.catalogSection {
-  padding: 80px 24px;
-  background: #ffffff;
-}
-
-.catalogGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.catalogCard {
-  padding: 36px;
-  background: #ffffff;
+.projectTag {
+  padding: 6px 12px;
+  background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 20px;
-  border-left: 4px solid #F57C00;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.catalogCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-}
-
-.cardEyebrow {
+  border-radius: 999px;
   font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #F57C00;
-  margin-bottom: 8px;
+  font-weight: 500;
+  color: #64748b;
 }
 
-.catalogCard h3 {
-  font-size: 24px;
+.projectFooter {
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.projectCategory {
+  font-size: 12px;
   font-weight: 700;
-  line-height: 1.3;
-  color: #0f172a;
-  margin-bottom: 20px;
-}
-
-.catalogList {
-  display: grid;
-  gap: 12px;
-  padding-left: 20px;
-  margin: 0;
-  list-style: disc;
-}
-
-.catalogList li {
-  font-size: 15px;
-  line-height: 1.65;
-  color: #475569;
-}
-
-.catalogList li::marker {
-  color: #F57C00;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-color, #F57C00);
 }
 
 /* ===== 통계 섹션 ===== */
@@ -274,9 +245,8 @@
 
 /* ===== 반응형 ===== */
 @media (max-width: 1024px) {
-  .coreGrid,
-  .catalogGrid {
-    grid-template-columns: 1fr;
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .statsInner {
@@ -289,22 +259,26 @@
     padding: 100px 20px 40px;
   }
 
-  .coreSection,
-  .catalogSection {
-    padding: 60px 20px;
+  .filterSection {
+    padding: 24px 20px;
+    top: 64px;
   }
 
-  .coreCard,
-  .catalogCard {
-    padding: 24px;
+  .filterTabs {
+    gap: 8px;
   }
 
-  .coreTitle {
-    font-size: 20px;
+  .filterTab {
+    padding: 10px 16px;
+    font-size: 13px;
   }
 
-  .catalogCard h3 {
-    font-size: 22px;
+  .projectsSection {
+    padding: 40px 20px 60px;
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
   }
 
   .statsSection {
